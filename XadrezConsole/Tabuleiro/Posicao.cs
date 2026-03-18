@@ -1,6 +1,6 @@
 ﻿using System.Security.AccessControl;
 
-namespace Tabuleiro
+namespace tabuleiro
 {
     internal class Posicao {
       public int linha { get; set; }
