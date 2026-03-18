@@ -13,7 +13,7 @@ namespace tabuleiro
         override public string ToString()
         {
             return linha 
-                + ", " 
+                + ". " 
                 + coluna;
         }
     }
