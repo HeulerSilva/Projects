@@ -4,11 +4,11 @@ namespace xadrez
 {
     class Torre : Peca
     {
-        public Torre(Tabuleiro tab, Cor cor)
-            : base(tab, cor)
-        { 
+        public Torre(Tabuleiro tab, Cor cor) : base(tab, cor)
+        {
         }
-        override public string ToString()
+
+        public override string ToString()
         {
             return "T";
         }
@@ -18,13 +18,15 @@ namespace xadrez
             Peca p = tab.peca(pos);
             return p == null || p.cor != cor;
         }
+
         public override bool[,] movimentosPossiveis()
         {
             bool[,] mat = new bool[tab.linhas, tab.colunas];
+
             Posicao pos = new Posicao(0, 0);
 
             //Acima/Norte - N
-           pos.definirValores(posicao.linha - 1, posicao.coluna);
+            pos.definirValores(posicao.linha - 1, posicao.coluna);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;

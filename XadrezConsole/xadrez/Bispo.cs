@@ -4,10 +4,10 @@ namespace xadrez
 {
     class Bispo : Peca
     {
-        public Bispo(Tabuleiro tab, Cor cor)
-            : base(tab, cor)
-        { 
+        public Bispo(Tabuleiro tab, Cor cor) : base(tab, cor)
+        {
         }
+
         public override string ToString()
         {
             return "B";
@@ -17,9 +17,11 @@ namespace xadrez
             Peca p = tab.peca(pos);
             return p == null || p.cor != cor;
         }
-        public override bool[,] movimentosPossiveis() 
+
+        public override bool[,] movimentosPossiveis()
         {
             bool[,] mat = new bool[tab.linhas, tab.colunas];
+
             Posicao pos = new Posicao(0, 0);
 
             //Nordeste - NE
@@ -31,7 +33,7 @@ namespace xadrez
                 {
                     break;
                 }
-                pos.definirValores(posicao.linha - 1, posicao.coluna + 1);
+                pos.definirValores(pos.linha - 1, pos.coluna + 1);
             }
             //Sudeste - SE
             pos.definirValores(posicao.linha + 1, posicao.coluna + 1);
@@ -42,7 +44,7 @@ namespace xadrez
                 {
                     break;
                 }
-                pos.definirValores(posicao.linha + 1, posicao.coluna + 1);
+                pos.definirValores(pos.linha + 1, pos.coluna + 1);
             }
             //Noroeste - NO
             pos.definirValores(posicao.linha - 1, posicao.coluna - 1);
@@ -53,7 +55,7 @@ namespace xadrez
                 {
                     break;
                 }
-                pos.definirValores(posicao.linha - 1, posicao.coluna - 1);
+                pos.definirValores(pos.linha - 1, pos.coluna - 1);
             }
             //Sudoeste -   SO
             pos.definirValores(posicao.linha + 1, posicao.coluna - 1);
@@ -64,7 +66,7 @@ namespace xadrez
                 {
                     break;
                 }
-                pos.definirValores(posicao.linha + 1, posicao.coluna - 1);
+                pos.definirValores(pos.linha + 1, pos.coluna - 1);
             }
             return mat;
         }
